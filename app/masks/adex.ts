@@ -1,6 +1,6 @@
 import { BuiltinMask } from "./typing";
 
-export const EN_MASKS: BuiltinMask[] = [
+export const AdEx_MASKS: BuiltinMask[] = [
   {
     avatar: "1f47e",
     name: "AdEx Bot",
