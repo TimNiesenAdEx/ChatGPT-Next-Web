@@ -17,6 +17,7 @@ export const AdEx_MASKS: BuiltinMask[] = [
       temperature: 0.3,
       max_tokens: 2000,
       presence_penalty: 0,
+      frequency_penalty: 0,
       sendMemory: true,
       historyMessageCount: 4,
       compressMessageLengthThreshold: 1000,
