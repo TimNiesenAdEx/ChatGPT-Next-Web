@@ -65,7 +65,7 @@ async function fetchAdEx() {
   console.log("[Fetch] fetching en prompts...");
   try {
     // const raw = await (await fetch(EN_URL)).text();
-    const response = await Promise.race([fetch(EN_URL), timeoutPromise(5000)]);
+    const response = await Promise.race([fetch(ADEX_PROMPTS), timeoutPromise(5000)]);
     const raw = await response.text();
     return raw
       .split("\n")
@@ -84,12 +84,12 @@ async function fetchAdEx() {
 
 async function main() {
   Promise.all([fetchAdEx(), fetchEN()])
-    .then(([cn, en]) => {
-      fs.writeFile(FILE, JSON.stringify({ cn, en }));
+    .then(([adex, en]) => {
+      fs.writeFile(FILE, JSON.stringify({ adex, en }));
     })
     .catch((e) => {
       console.error("[Fetch] failed to fetch prompts");
-      fs.writeFile(FILE, JSON.stringify({ cn: [], en: [] }));
+      fs.writeFile(FILE, JSON.stringify({ adex: [], en: [] }));
     })
     .finally(() => {
       console.log("[Fetch] saved to " + FILE);
