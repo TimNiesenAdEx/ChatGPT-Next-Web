@@ -83,13 +83,13 @@ async function fetchAdEx() {
 }
 
 async function main() {
-  Promise.all([fetchAdEx(), fetchEN()])
-    .then(([adex, en]) => {
-      fs.writeFile(FILE, JSON.stringify({ adex, en }));
+  Promise.all([fetchEN()])
+    .then(([en]) => {
+      fs.writeFile(FILE, JSON.stringify({ en }));
     })
     .catch((e) => {
       console.error("[Fetch] failed to fetch prompts");
-      fs.writeFile(FILE, JSON.stringify({ adex: [], en: [] }));
+      fs.writeFile(FILE, JSON.stringify({ en: [] }));
     })
     .finally(() => {
       console.log("[Fetch] saved to " + FILE);
