@@ -136,8 +136,7 @@ export const usePromptStore = create<PromptStore>()(
       name: StoreKey.Prompt,
       version: 1,
       onRehydrateStorage(state) {
-        //const PROMPT_URL = "./prompts.json";
-        const PROMPT_URL = "https://adexpartners.sharepoint.com/:u:/s/AdExGPT/EfGVbThcK51KvNBj5avKHg8BqrLdCLgC07Qj18lHIsOM5A?e=HUrkTg";
+        const PROMPT_URL = "./prompts.json";
 
         type PromptList = Array<[string, string]>;
 
