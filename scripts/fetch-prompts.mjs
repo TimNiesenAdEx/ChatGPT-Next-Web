@@ -9,7 +9,7 @@ const CN_URL = MIRRORF_FILE_URL + RAW_CN_URL;
 const RAW_EN_URL = "f/awesome-chatgpt-prompts/main/prompts.csv";
 const EN_URL = MIRRORF_FILE_URL + RAW_EN_URL;
 const FILE = "./public/prompts.json";
-const ADEX_PROMPTS = "https://www.dropbox.com/s/ojbu9rmnq3osvjy/adex_prompts.csv";
+const ADEX_PROMPTS = "https://raw.githubusercontent.com/TimNiesenAdEx/ChatGPT-Next-Web/main/public/adex_prompts.csv";
 
 const ignoreWords = ["涩涩", "魅魔"];
 
