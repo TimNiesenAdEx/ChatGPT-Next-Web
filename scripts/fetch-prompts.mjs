@@ -84,12 +84,12 @@ async function fetchADEX() {
 
 async function main() {
   Promise.all([fetchADEX(), fetchEN()])
-    .then(([cn, en]) => {
-      fs.writeFile(FILE, JSON.stringify({ cn, en }));
+    .then(([adex, en]) => {
+      fs.writeFile(FILE, JSON.stringify({ adex, en }));
     })
     .catch((e) => {
       console.error("[Fetch] failed to fetch prompts");
-      fs.writeFile(FILE, JSON.stringify({ cn: [], en: [] }));
+      fs.writeFile(FILE, JSON.stringify({ adex: [], en: [] }));
     })
     .finally(() => {
       console.log("[Fetch] saved to " + FILE);
