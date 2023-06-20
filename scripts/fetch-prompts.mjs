@@ -8,7 +8,7 @@ const RAW_CN_URL = "PlexPt/awesome-chatgpt-prompts-zh/main/prompts-zh.json";
 const CN_URL = MIRRORF_FILE_URL + RAW_CN_URL;
 const RAW_EN_URL = "f/awesome-chatgpt-prompts/main/prompts.csv";
 const EN_URL = MIRRORF_FILE_URL + RAW_EN_URL;
-const ADEX_URL = "https://raw.githubusercontent.com/TimNiesenAdEx/ChatGPT-Next-Web/319bc0ded4d8786fc36736c8dbb7259c905c86d0/public/adex_prompts.csv";
+const ADEX_URL = "https://raw.githubusercontent.com/TimNiesenAdEx/ChatGPT-Next-Web/main/public/adex_prompts.csv";
 const FILE = "./public/prompts.json";
 
 const ignoreWords = ["涩涩", "魅魔"];
