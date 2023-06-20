@@ -57,7 +57,7 @@ async function fetchEN() {
       );
   } catch (error) {
     console.error("[Fetch] failed to fetch en prompts", error);
-    return [];
+    return []; 
   }*/
   return [];
 }
