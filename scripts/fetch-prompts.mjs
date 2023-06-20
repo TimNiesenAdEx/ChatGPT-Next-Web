@@ -57,7 +57,7 @@ async function fetchEN() {
       );
   } catch (error) {
     console.error("[Fetch] failed to fetch en prompts", error);
-    return []; 
+    return [];
   }*/
   return [];
 }
@@ -84,13 +84,13 @@ async function fetchADEX() {
 }
 
 async function main() {
-  Promise.all([fetchADEX()])
-    .then(([cn]) => {
-      fs.writeFile(FILE, JSON.stringify({ cn }));
+  Promise.all([fetchADEX(), fetchEN()])
+    .then(([cn, en]) => {
+      fs.writeFile(FILE, JSON.stringify({ cn, en }));
     })
     .catch((e) => {
       console.error("[Fetch] failed to fetch prompts");
-      fs.writeFile(FILE, JSON.stringify({ cn: []}));
+      fs.writeFile(FILE, JSON.stringify({ cn: [], en: [] }));
     })
     .finally(() => {
       console.log("[Fetch] saved to " + FILE);
