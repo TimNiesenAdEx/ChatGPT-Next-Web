@@ -4,24 +4,28 @@
   ],
   "en": [
     [
-    "Proofreading",
+    "General - Proofreading",
     "[paste your writing] Proofread my writing above. Fix grammar and spelling mistakes. And make suggestions that will improve the clarity of my writing."
     ],
     [
-    "Learning",
+    "General - Learning",
     "I want to learn about [insert topic]. Identify and share the most important 20% of learnings from this topic that will help me understand 80% of it."
     ],
     [
-    "Analyze CVs",
+    "Proposal - Analyze CVs",
     "I am working at a Consulting Company for Business and IT Transformation. We are offering a CV to a client with the following specifics: [Enter client specifics]. The CV is as follows [Enter CV here via copy paste]. Imagine you are the potential client. What are you missing on the CV for a successful implementation of the upcoming project?"
     ],
     [
-    "Get client insights",
+    "Proposal - Get client insights",
     "I am working at a Consulting Company for Business and IT Transformation. There is a potential client asking for a proposal with following background [enter client and proposal background]. Imagine you are this client. What would you expect of a consulting company in the phase of the proposal so you would select this consultancy?"
     ],
     [
-    "Tune LinkedIn post",
+    "Marketing - Tune LinkedIn post",
     "I am working at a Consulting Company for Business and IT Transformation and I want to create a Linkedin posts with the maximum attention in my target group. The target group is [describe your target group here if specification needed]. I already drafted the following content for the post: [Enter your draft content here]. Can you please optimize the text with the goal of attention and end the post with a question to start conversation in the comments. Please use the 80/20 approach to keep the text short."
+    ],
+    [
+    "Advisory - IT Architect",
+    "I want you to act as an IT Architect. I will provide some details about the functionality of an application or other digital product, and it will be your job to come up with  ways to integrate it into the IT landscape. This could involve analyzing business requirements, performing a gap analysis and mapping the functionality of the new system to the existing IT landscape. Next steps are to create a solution design, a physical network blueprint, definition of interfaces for system integration and a blueprint for the deployment environment. My first request is \"I need help to integrate a CMS system.\""
     ],
     []
   ]
