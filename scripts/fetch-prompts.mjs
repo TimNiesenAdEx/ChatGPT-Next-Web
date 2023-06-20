@@ -41,7 +41,7 @@ async function fetchCN() {
 }
 
 async function fetchEN() {
-  console.log("[Fetch] fetching en prompts...");
+  /*console.log("[Fetch] fetching en prompts...");
   try {
     // const raw = await (await fetch(EN_URL)).text();
     const response = await Promise.race([fetch(EN_URL), timeoutPromise(5000)]);
@@ -58,7 +58,8 @@ async function fetchEN() {
   } catch (error) {
     console.error("[Fetch] failed to fetch en prompts", error);
     return [];
-  }
+  }*/
+  return [];
 }
 
 async function fetchADEX() {
