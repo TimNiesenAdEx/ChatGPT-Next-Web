@@ -7,7 +7,8 @@ const MIRRORF_FILE_URL = "http://raw.fgit.ml/";
 const RAW_CN_URL = "PlexPt/awesome-chatgpt-prompts-zh/main/prompts-zh.json";
 const CN_URL = MIRRORF_FILE_URL + RAW_CN_URL;
 const RAW_EN_URL = "f/awesome-chatgpt-prompts/main/prompts.csv";
-const EN_URL = "https://raw.githubusercontent.com/TimNiesenAdEx/ChatGPT-Next-Web/319bc0ded4d8786fc36736c8dbb7259c905c86d0/public/adex_prompts.csv"; // MIRRORF_FILE_URL + RAW_EN_URL;
+const EN_URL = MIRRORF_FILE_URL + RAW_EN_URL;
+const ADEX_URL = "https://raw.githubusercontent.com/TimNiesenAdEx/ChatGPT-Next-Web/319bc0ded4d8786fc36736c8dbb7259c905c86d0/public/adex_prompts.csv";
 const FILE = "./public/prompts.json";
 
 const ignoreWords = ["涩涩", "魅魔"];
@@ -60,8 +61,29 @@ async function fetchEN() {
   }
 }
 
+async function fetchADEX() {
+  console.log("[Fetch] fetching en prompts...");
+  try {
+    // const raw = await (await fetch(EN_URL)).text();
+    const response = await Promise.race([fetch(ADEX_URL), timeoutPromise(5000)]);
+    const raw = await response.text();
+    return raw
+      .split("\n")
+      .slice(1)
+      .map((v) =>
+        v
+          .split('","')
+          .map((v) => v.replace(/^"|"$/g, "").replaceAll('""', '"'))
+          .filter((v) => v[0] && v[1]),
+      );
+  } catch (error) {
+    console.error("[Fetch] failed to fetch en prompts", error);
+    return [];
+  }
+}
+
 async function main() {
-  Promise.all([fetchCN(), fetchEN()])
+  Promise.all([fetchADEX(), fetchEN()])
     .then(([cn, en]) => {
       fs.writeFile(FILE, JSON.stringify({ cn, en }));
     })
