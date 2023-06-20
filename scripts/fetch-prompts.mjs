@@ -9,6 +9,7 @@ const CN_URL = MIRRORF_FILE_URL + RAW_CN_URL;
 const RAW_EN_URL = "f/awesome-chatgpt-prompts/main/prompts.csv";
 const EN_URL = MIRRORF_FILE_URL + RAW_EN_URL;
 const FILE = "./public/prompts.json";
+const ADEX_PROMPTS = "https://www.dropbox.com/s/ojbu9rmnq3osvjy/adex_prompts.csv";
 
 const ignoreWords = ["涩涩", "魅魔"];
 
@@ -60,14 +61,35 @@ async function fetchEN() {
   }
 }
 
+async function fetchAdEx() {
+  console.log("[Fetch] fetching AdEx prompts...");
+  try {
+    // const raw = await (await fetch(EN_URL)).text();
+    const response = await Promise.race([fetch(ADEX_PROMPTS), timeoutPromise(5000)]);
+    const raw = await response.text();
+    return raw
+      .split("\n")
+      .slice(1)
+      .map((v) =>
+        v
+          .split('","')
+          .map((v) => v.replace(/^"|"$/g, "").replaceAll('""', '"'))
+          .filter((v) => v[0] && v[1]),
+      );
+  } catch (error) {
+    console.error("[Fetch] failed to fetch en prompts", error);
+    return [];
+  }
+}
+
 async function main() {
-  Promise.all([fetchCN(), fetchEN()])
-    .then(([cn, en]) => {
-      fs.writeFile(FILE, JSON.stringify({ cn, en }));
+  Promise.all([fetchAdEx(), fetchEN()])
+    .then(([adex, en]) => {
+      fs.writeFile(FILE, JSON.stringify({ adex, en }));
     })
     .catch((e) => {
       console.error("[Fetch] failed to fetch prompts");
-      fs.writeFile(FILE, JSON.stringify({ cn: [], en: [] }));
+      fs.writeFile(FILE, JSON.stringify({ adex: [], en: [] }));
     })
     .finally(() => {
       console.log("[Fetch] saved to " + FILE);
