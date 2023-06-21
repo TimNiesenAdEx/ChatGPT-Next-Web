@@ -489,8 +489,8 @@ export function Settings() {
 
         <List>
           <ListItem
-            title={Locale.Settings.NewField.Title}
-            subTitle={Locale.Settings.NewField.SubTitle}
+            title={Locale.Settings.AdexKey.Title}
+            subTitle={Locale.Settings.AdexKey.SubTitle}
           >
             <PasswordInput
                 value={accessStore.token}
@@ -502,7 +502,7 @@ export function Settings() {
               />
           </ListItem>
 
-          
+
           {showAccessCode ? (
             <ListItem
               title={Locale.Settings.AccessCode.Title}
