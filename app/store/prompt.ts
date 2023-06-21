@@ -154,7 +154,7 @@ export const usePromptStore = create<PromptStore>()(
                     ({
                       id: Math.random(),
                       title,
-                      accessStore.token,
+                      content,
                     } as Prompt),
                 );
               },

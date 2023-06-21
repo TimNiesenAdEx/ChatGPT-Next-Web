@@ -124,6 +124,12 @@ const de: PartialLocaleType = {
       SubTitle:
         "Komprimierung, wenn die Länge der unkomprimierten Nachrichten den Wert überschreitet",
     },
+    AdexKey: {
+      Title: "AdEx Key",
+      SubTitle:
+        "Bitte geben Sie Ihren Key ein",
+      Placeholder: "OpenAI API-Schlüssel",
+    },
     Token: {
       Title: "API-Schlüssel",
       SubTitle:
@@ -175,8 +181,8 @@ const de: PartialLocaleType = {
         content,
       Topic:
         "Bitte erstellen Sie einen vier- bis fünfwörtigen Titel, der unser Gespräch zusammenfasst, ohne Einleitung, Zeichensetzung, Anführungszeichen, Punkte, Symbole oder zusätzlichen Text. Entfernen Sie Anführungszeichen.",
-      Summarize:
-        "Fassen Sie unsere Diskussion kurz in 200 Wörtern oder weniger zusammen, um sie als Pronpt für zukünftige Gespräche zu verwenden.",
+      Summarize:  
+        "Fassen Sie unsere Diskussion kurz in 200 Wörtern oder weniger zusammen, um sie als Prompt für zukünftige Gespräche zu verwenden.",
     },
   },
   Copy: {
